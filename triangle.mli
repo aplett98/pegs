@@ -4,6 +4,8 @@ type location
 
 type pin = location * bool
 
+type triangle
+
 exception InvalidLocation
 exception InvalidJump
 exception InvalidUndo
@@ -18,6 +20,12 @@ val valid : location -> location
 (* game s -- Return an object representing a game board, with 
   starting location s *)
 class game : location -> object
+
+  val base : triangle
+
+  val mutable board : triangle
+
+  val mutable start : location 
   
   (* Return only a valid location, otherwise raise InvalidLocation *)
   method valid : location -> location
@@ -27,6 +35,9 @@ class game : location -> object
 
   (* Raise WinGame if the game is won *)
   method win : unit
+
+  (* translate a location into an integer for arithmetic *)
+  method index : location -> int
 
   (* Bring the board to a starting state *)
   method reset : location -> unit
@@ -44,7 +55,9 @@ class game : location -> object
   method insert : location -> unit
 
   (* Render the board in a starting state *)
-  method start : location -> unit
+  method start : unit
+
+  val mutable prev : triangle option list
 
   (* Jump one pin over another, if valid, and render the board *)
   method jump : location -> location -> unit

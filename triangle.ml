@@ -1,10 +1,11 @@
 open Sys
 
-type location = | A of int
-				| B of int
-				| C of int
-				| D of int
-				| E of int
+type location = 
+  | A of int
+  | B of int
+  | C of int
+  | D of int
+  | E of int
 
 type pin = location * bool
 

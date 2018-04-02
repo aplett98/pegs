@@ -1,0 +1,3 @@
+open Pegs 
+
+let () = pegs ()

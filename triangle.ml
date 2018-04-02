@@ -156,3 +156,23 @@ object(this)
     this#board
    
 end
+
+let translate (s : string) : location =
+  match s with
+  | "a0" -> A 0
+  | "b0" -> B 0
+  | "b1" -> B 1
+  | "c0" -> C 0
+  | "c1" -> C 1
+  | "c2" -> C 2
+  | "d0" -> D 0
+  | "d1" -> D 1
+  | "d2" -> D 2
+  | "d3" -> D 3
+  | "e0" -> E 0
+  | "e1" -> E 1
+  | "e2" -> E 2
+  | "e3" -> E 3
+  | "e4" -> E 4
+  | _ -> raise InvalidLocation
+

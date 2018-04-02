@@ -67,5 +67,5 @@ class game : location -> object
 
 end
 
-
+val translate : string -> location
 

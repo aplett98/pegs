@@ -20,5 +20,5 @@ This just runs my implementation of the game.
 ## sol.txt
 A simple solution with the command line implementation of the game. Run:
 ```shell
-./run.byte << sol.txt
+cat sol.txt | ./run.byte
 ```

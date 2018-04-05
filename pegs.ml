@@ -40,6 +40,9 @@ let rec command (lst : string list) (t : game) =
   | _ -> raise InvalidAction
 
 and pegs () =
+  let () = print_string ("Instructions:\n" ^ help) in
+  let test = new game test_start in
+  let () = test#base in
   let () = print_string "Choose starting pin: " in
   try
   	let s = String.lowercase (read_line ()) in

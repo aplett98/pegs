@@ -6,6 +6,8 @@ type pin = location * bool
 
 type triangle
 
+val test_start : location
+
 exception InvalidLocation
 exception InvalidJump
 exception InvalidUndo

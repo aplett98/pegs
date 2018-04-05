@@ -11,6 +11,8 @@ type pin = location * bool
 
 type triangle = pin list
 
+let test_start = A 0
+
 exception InvalidLocation
 exception InvalidJump
 exception InvalidUndo

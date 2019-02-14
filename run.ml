@@ -1,3 +1,0 @@
-open Pegs 
-
-let () = pegs ()

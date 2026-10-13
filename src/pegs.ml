@@ -45,7 +45,7 @@ and pegs () =
   let () = test#base in
   let () = print_string "Choose starting pin: " in
   try
-  	let s = String.lowercase (read_line ()) in
+  	let s = String.lowercase_ascii (read_line ()) in
   	let s = translate s in
     let t = new game s in
     let () = t#start in
@@ -53,7 +53,7 @@ and pegs () =
     while !bl do
       try
         let () = print_string "Make a move, or type \"Help\": " in
-        let st = parse (String.lowercase (read_line ())) in
+        let st = parse (String.lowercase_ascii (read_line ())) in
         command st t
       with
       | EndGame -> print_string "Goodbye.\n"; bl := false
